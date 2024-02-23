@@ -48,3 +48,4 @@ async def libri(ctx):
 async def quaderni(ctx):
     await ctx.send("Vanno buttati in carta")
 
+bot.run('token')
