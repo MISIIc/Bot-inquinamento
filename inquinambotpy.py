@@ -11,6 +11,8 @@ bot = commands.Bot(command_prefix='$', intents=intents)
 @bot.event
 async def on_ready():
     print(f'Hai fatto l\'accesso come {bot.user}')
+    #await send("Il bot è acceso, scrivi lista per avere la lista dei comandi")
+
 
 @bot.command()
 async def lista(ctx):
@@ -45,5 +47,15 @@ async def libri(ctx):
 @bot.command()
 async def quaderni(ctx):
     await ctx.send("Vanno buttati in carta")
+
+@bot.command()
+async def progetto(ctx):
+    await ctx.send(gen_prog)
+
+def gen_prog():
+    lista_prg = "Astuccio bottiglia","Cestini con il cartone","Decorazioni con la carta"
+    prg_name = ""   
+    prg_name = random.choice(lista_prg)
+    return prg_name
 
 bot.run('token')
